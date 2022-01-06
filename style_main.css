@@ -1,0 +1,47 @@
+body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.title {
+  margin: 0;
+  color: blueviolet;
+  font-size: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: burlywood;
+}
+#board {
+  /* height: calc(100vh-50px); */
+  height: 200px;
+  background-color: chartreuse;
+  display: grid;
+  /* how match colum will be */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  width: 50px;
+  height: 50px;
+  background-color: cyan;
+  border-radius: 10px;
+  border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+}
+.card:hover {
+  background-color: azure;
+}
+
+.hidecard {
+  width: 50px;
+  height: 50px;
+  /* background-color: cyan; */
+  /* border-radius: 10px; */
+  /* border: 1px black solid; */
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* font-size: xx-large; */
+}
