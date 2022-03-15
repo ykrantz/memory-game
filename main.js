@@ -1,8 +1,9 @@
 // let cardArray=[]
 
-// *****
+// ******
 // level 01: define variable
 // ******
+
 
 const cards = [
   { name: "A" },
