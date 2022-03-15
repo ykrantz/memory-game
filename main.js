@@ -19,6 +19,7 @@ const cards = [
   { name: "F" },
 ];
 
+const $massage = document.getElementById("message");
 // *****
 // level 02:main
 // ******
@@ -50,7 +51,6 @@ function creatCardElement(idx) {
   const cardEl = document.createElement("div");
 
   cardEl.id = idx;
-  // div class=class .so it will get the desighn
   cardEl.className = "card";
 
   cardEl.onclick = card_click;
@@ -59,18 +59,18 @@ function creatCardElement(idx) {
 }
 
 let arr_clicks = [];
-// what to do when clicks
 let score = 0;
 let number_of_founded_cards = 0;
 
 function card_click(evn) {
-  // console.log(evn.target.id);
   const cardEl = evn.target;
   const idx = cardEl.id;
-  // console.log(cards[idx]);
+  $massage.innerHTML = "";
+
   // if less then two cards - will show. if more will hide
 
   cardEl.innerHTML = cards[idx].name;
+  cardEl.className = "showCard";
   if (arr_clicks[0] == idx) {
     alert("you can't coose the same card. please chopose again");
     return;
@@ -80,14 +80,17 @@ function card_click(evn) {
       if (are_equal(cards, arr_clicks[0], arr_clicks[1])) {
         score++;
         number_of_founded_cards += 2;
-        alert(
-          `you are wright.the cards are the same: ${cards[arr_clicks[0]].name}`
-        );
+
+        $massage.innerHTML = `you are wright.the cards are the same  ( ${
+          cards[arr_clicks[0]].name
+        } )`;
+
         setTimeout(() => {
           hide_elements_by_id(arr_clicks[0]);
           hide_elements_by_id(arr_clicks[1]);
           arr_clicks = [];
         }, 200);
+
         if (number_of_founded_cards == cards.length) {
           alert("End of game");
           return;
@@ -96,43 +99,14 @@ function card_click(evn) {
         setTimeout(() => {
           document.getElementById(arr_clicks[0]).innerHTML = "";
           document.getElementById(arr_clicks[1]).innerHTML = "";
+          document.getElementById(arr_clicks[0]).className = "card";
+          document.getElementById(arr_clicks[1]).className = "card";
           arr_clicks = [];
         }, 200);
       }
-      // cardEl.innerHTML = cards[idx].name;
-      // arr_clicks.push(idx);
     }
   }
 }
-
-// let card_click = (evn) => {
-//   console.log(evn.target.id);
-//   const cardEl = evn.target;
-//   const idx = cardEl.id;
-//   console.log(cards[idx]);
-//   // if less then to cards - will show. if more will hide
-
-//   cardEl.innerHTML = cards[idx].name;
-//   arr_clicks.push(idx);
-//   console.log(arr_clicks);
-//   if (arr_clicks.length == 2) {
-//     if (cards[arr_clicks[0]].name == cards[arr_clicks[1]].name) {
-//       alert(
-//         `you are wright.the cards are the same: ${cards[arr_clicks[0]].name}`
-//       );
-//     }
-
-//     setTimeout(() => {
-//       document.getElementById(arr_clicks[0]).innerHTML = "";
-//       document.getElementById(arr_clicks[1]).innerHTML = "";
-//       arr_clicks = [];
-//     }, 100);
-//     // cardEl.innerHTML = cards[idx].name;
-//     // arr_clicks.push(idx);
-//   }
-//   // console.log(evn);
-//   // alert(card.name);
-// };
 
 // *****
 // level 04: son function
@@ -172,7 +146,3 @@ function randRange(a, b) {
 function are_equal(arr, i, j) {
   return arr[i].name == arr[j].name && i != j;
 }
-
-// function f() {
-//   alert("DDD");
-// }

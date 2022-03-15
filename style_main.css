@@ -2,46 +2,85 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("./images/tarot-991041.jpg");
+  background-size: cover;
+  height: 100%;
 }
 .title {
   margin: 0;
+  margin-top: 20px;
   color: blueviolet;
   font-size: 50px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: burlywood;
+  /* background-color: burlywood; */
 }
 #board {
+  margin-top: 20px;
+  margin-left: 10%;
   /* height: calc(100vh-50px); */
-  height: 200px;
-  background-color: chartreuse;
+  height: 500px;
+  /* background-color: chartreuse; */
   display: grid;
   /* how match colum will be */
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .card {
-  width: 50px;
-  height: 50px;
-  background-color: cyan;
+  width: 110px;
+  height: 150px;
+  border-radius: 10px;
+  border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+  background: url("./images/loneFlower-5265194_1920.jpg");
+  background-size: cover;
+}
+
+.showCard {
+  width: 110px;
+  height: 150px;
+  border-radius: 10px;
+  border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 30px;
+
+  font-size: 50px;
+  background-color: beige;
+  background-size: cover;
+}
+
+.card:hover {
+  background-color: azure;
+}
+
+.hidecard {
+  width: 110px;
+  height: 150px;
   border-radius: 10px;
   border: 1px black solid;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: xx-large;
-}
-.card:hover {
-  background-color: azure;
+  margin-top: 30px;
+
+  background: url("./images/successful-2633707_1920.png");
+  background-color: antiquewhite;
+  background-size: cover;
 }
 
-.hidecard {
-  width: 50px;
-  height: 50px;
-  /* background-color: cyan; */
-  /* border-radius: 10px; */
-  /* border: 1px black solid; */
-  display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* font-size: xx-large; */
+#message {
+  height: 10px;
+  color: blue;
+  font-size: large;
 }
